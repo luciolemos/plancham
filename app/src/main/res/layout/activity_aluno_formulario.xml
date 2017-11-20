@@ -5,11 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nome" />
-
     <EditText
         android:id="@+id/formulario_nome"
         android:layout_width="match_parent"
@@ -17,11 +12,6 @@
         android:ems="10"
         android:hint="Seu nome aqui"
         android:inputType="textPersonName" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Endereço" />
 
     <EditText
         android:id="@+id/formulario_endereco"
@@ -31,11 +21,6 @@
         android:hint="Seu endereço aqui"
         android:inputType="textPersonName" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fone" />
-
     <EditText
         android:id="@+id/formulario_fone"
         android:layout_width="match_parent"
@@ -44,11 +29,6 @@
         android:hint="Seu fone aqui"
         android:inputType="phone" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Site" />
-
     <EditText
         android:id="@+id/formulario_site"
         android:layout_width="match_parent"
@@ -56,11 +36,6 @@
         android:ems="10"
         android:hint="Seu site aqui"
         android:inputType="textPostalAddress" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nota" />
 
     <RatingBar
         android:id="@+id/formulario_nota"

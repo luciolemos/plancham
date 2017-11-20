@@ -47,6 +47,10 @@ public class AlunoFormularioActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Aluno aluno = (Aluno) intent.getSerializableExtra("aluno");
+        if(aluno!=null){
+            preencherCampos(aluno);
+        }
+
     }
 
     private void cadastrar() {
@@ -60,6 +64,8 @@ public class AlunoFormularioActivity extends AppCompatActivity {
         aluno.setNota(Double.valueOf(rbNota.getProgress()));
 
         dao.inserir(aluno);
+        limparCampos();
+
 
         Intent intentChamaLista = new Intent(this,AlunoListaActivity.class);
         startActivity(intentChamaLista);
@@ -71,5 +77,13 @@ public class AlunoFormularioActivity extends AppCompatActivity {
         etFone.setText("");
         etSite.setText("");
         rbNota.setProgress(0);
+    }
+
+    private void preencherCampos(Aluno aluno) {
+        etNome.setText(aluno.getNome());
+        etEndereco.setText(aluno.getEndereco());
+        etFone.setText(aluno.getFone());
+        etSite.setText(aluno.getSite());
+        rbNota.setProgress(aluno.getNota().intValue());
     }
 }
