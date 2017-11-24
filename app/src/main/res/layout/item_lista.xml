@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="15dp">
+
+    <ImageView
+        android:id="@+id/lista_foto"
+        android:layout_width="55dp"
+        android:layout_height="53dp"
+        android:layout_margin="5dp"
+        android:src="@drawable/person" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="306dp"
+        android:layout_height="140dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/lista_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/lista_endereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Endereco"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/lista_fone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fone"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/lista_site"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Site"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/lista_nota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nota"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+</LinearLayout>

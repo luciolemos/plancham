@@ -4,15 +4,15 @@
 
     <item
         android:id="@+id/item_ligar"
-        android:title="Fazer ligação" />
+        android:title="Acionamento por voz" />
 
     <item
         android:id="@+id/item_sms"
-        android:title="Enviar SMS" />
+        android:title="Acionamento por SMS" />
 
     <item
         android:id="@+id/item_mapa"
-        android:title="Ver no Mapa" />
+        android:title="Visualizar no Mapa" />
 
     <item
         android:id="@+id/item_site"
@@ -20,9 +20,9 @@
 
     <item
         android:id="@+id/item_editar"
-        android:title="Editar" />
+        android:title="Editar militar" />
     <item
         android:id="@+id/item_deletar"
-        android:title="Ecluir" />
+        android:title="Excluir militar" />
 
 </menu>

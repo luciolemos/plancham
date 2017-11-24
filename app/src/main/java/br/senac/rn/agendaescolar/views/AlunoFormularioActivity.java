@@ -19,6 +19,7 @@ public class AlunoFormularioActivity extends AppCompatActivity {
     private EditText etNome, etEndereco, etFone, etSite;
     private RatingBar rbNota;
     private Button btCadastrar;
+//    private Aluno aluno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,19 +57,13 @@ public class AlunoFormularioActivity extends AppCompatActivity {
     private void cadastrar() {
         AlunoDao dao = new AlunoDao(this);
         Aluno aluno = new Aluno();
-
         aluno.setNome(etNome.getText().toString());
         aluno.setEndereco(etEndereco.getText().toString());
         aluno.setFone(etFone.getText().toString());
         aluno.setSite(etSite.getText().toString());
         aluno.setNota(Double.valueOf(rbNota.getProgress()));
-
         dao.inserir(aluno);
-        limparCampos();
-
-
-        Intent intentChamaLista = new Intent(this,AlunoListaActivity.class);
-        startActivity(intentChamaLista);
+        finish();
     }
 
     private void limparCampos() {
@@ -87,3 +82,42 @@ public class AlunoFormularioActivity extends AppCompatActivity {
         rbNota.setProgress(aluno.getNota().intValue());
     }
 }
+
+    /*private void inicializarComponentes() {
+        etNome = (EditText) findViewById(R.id.formulario_nome);
+        etEndereco = (EditText) findViewById(R.id.formulario_endereco);
+        etFone = (EditText) findViewById(R.id.formulario_fone);
+        etSite = (EditText) findViewById(R.id.formulario_site);
+        rbNota = (RatingBar) findViewById(R.id.formulario_nota);
+        btCadastrar = (Button) findViewById(R.id.formulario_cadastrar);
+
+        Intent intent = getIntent();
+        Aluno aluno = (Aluno) intent.getSerializableExtra("aluno");
+        if(aluno!=null){
+            preencherCampos(aluno);
+        } else {
+            aluno=new Aluno();
+        }
+    }
+
+    private void cadastrar() {
+        AlunoDao dao = new AlunoDao(this);
+        // Aluno aluno = new Aluno();
+        aluno.setNome(etNome.getText().toString());
+        aluno.setEndereco(etEndereco.getText().toString());
+        aluno.setFone(etFone.getText().toString());
+        aluno.setSite(etSite.getText().toString());
+        aluno.setNota(Double.valueOf(rbNota.getProgress()));
+
+        if (aluno.getId()==null){
+            dao.inserir(aluno);
+        }else {
+            dao.editar(aluno);
+        }
+
+        finish();
+
+    }
+*/
+
+

@@ -24,6 +24,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.senac.rn.agendaescolar.adapter.AlunoAdapter;
 import br.senac.rn.agendaescolar.daos.AlunoDao;
 import br.senac.rn.agendaescolar.models.Aluno;
 
@@ -36,23 +37,27 @@ public class AlunoListaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aluno_lista);
+
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
         inicializarComponentes();
         definirEventos();
     }
 
+
     private void inicializarComponentes() {
         lvAlunos = (ListView) findViewById(R.id.lista_alunos);
         btCadastrar = (Button) findViewById(R.id.cadastrar);
-
-        List<Aluno> alunos = new AlunoDao(this).buscarTodos();
-
-        ArrayAdapter<Aluno> adapter = new ArrayAdapter<Aluno>(
-                this,
-                android.R.layout.simple_list_item_1,
-                alunos);
-
-        lvAlunos.setAdapter(adapter);
+        carregaLista();
         registerForContextMenu(lvAlunos);
+    }
+
+    private void carregaLista() {
+        List<Aluno> alunos = new AlunoDao(this).buscarTodos();
+        AlunoAdapter adapter = new AlunoAdapter(this, alunos);
+        lvAlunos.setAdapter(adapter);
     }
 
     private void definirEventos() {
@@ -110,6 +115,13 @@ public class AlunoListaActivity extends AppCompatActivity {
                     item.setIntent(intentLigar);
                 }
                 break;
+
+            case R.id.item_deletar:
+                AlunoDao dao=new AlunoDao(this);
+                dao.deletar(aluno);
+                carregaLista();
+                break;
+
         }
         return super.onContextItemSelected(item);
     }
